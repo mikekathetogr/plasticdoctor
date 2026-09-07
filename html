@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home - {{YOUR_BUSINESS_NAME}}</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<link rel="stylesheet" id="wp-block-library-css" href="https://cdnjs.cloudflare.com/ajax/libs/wordpress-elements/style.min.css" media="all">
+	<link rel="stylesheet" id="select2-css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" media="all">
+
+	<style>
+		/* Core Base Styles */
+		body { background-color: #09090a; color: #ffffff; font-family: sans-serif; margin: 0; padding: 0; }
+		a { color: #ffffff; text-decoration: none; }
+		.container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+		
+		/* First Screen Section */
+		.first-screen { padding: 100px 0; text-align: center; }
+		.first__screen-wrapper h2 { font-size: 3rem; margin-bottom: 20px; }
+		.first-screen__button-wrapper a { display: inline-block; padding: 12px 30px; background: #ffffff; color: #000; border-radius: 25px; margin: 5px; font-weight: bold; }
+
+		/* Location Component Styling */
+		.location {
+			margin-top: 16px; 
+			padding: 30px;
+			border-radius: 16px;
+			background: linear-gradient(90deg, #1F1F1F 45%, rgba(31, 31, 31, 0.9) 51.82%, rgba(31, 31, 31, 0.8) 62%, rgba(31, 31, 31, 0) 100%), url('{{LOCATION_BACKGROUND_IMAGE_URL}}') center / cover;
+		}
+		.location__wrapp {
+			display: grid;
+			grid-template-columns: 320px 320px;
+			gap: 60px;
+		}
+		.location h2 { margin-top: 0; margin-bottom: 1.25rem; font-size: 2.25em; font-weight: 600; color: #fff; }
+		.location .item--in { width: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; }
+		.location .item-content { margin-bottom: 24px; }
+		.location .item-btn { display: flex; gap: 14px; align-items: center; }
+
+		@media (max-width: 767px) {
+			.location__wrapp { grid-template-columns: 1fr; gap: 20px; }
+			.location h2 { font-size: 24px; }
+		}
+
+		/* Services Section */
+		.services { padding: 60px 0; }
+		.services__wrap { display: flex; gap: 20px; flex-wrap: wrap; }
+		.services__wrap-item { flex: 1; min-width: 280px; background: #1f1f1f; padding: 20px; border-radius: 12px; }
+		.serv__line { padding: 8px 0; border-bottom: 1px solid #333; }
+
+		/* Form Styling */
+		.footer-form { background: #141414; padding: 60px 0; }
+		.form-element { margin-bottom: 20px; }
+		.form-element label { display: block; margin-bottom: 8px; }
+		.form-element input[type="text"], .form-element select { width: 100%; padding: 12px; background: #fafafa; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+		.submit-button { background: #4488ee; color: #fff; border: none; padding: 12px 30px; border-radius: 4px; cursor: pointer; }
+
+		/* Footer */
+		.site-footer { padding: 40px 0; border-top: 1px solid #222; }
+		.footer__top-line { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+		.soc { list-style: none; padding: 0; display: flex; gap: 15px; }
+		.dflex { display: flex; justify-content: space-between; }
+	</style>
+</head>
+
+<body class="home custom-background">
+<div id="page" class="site">	
+
+	<nav id="site-navigation" class="main-navigation">
+		<div class="menu-top-menu-container">
+			<ul id="primary-menu" class="menu">
+				<li><a href="{{HOME_PAGE_URL}}">Home</a></li>
+				<li><a href="#price-modal">Price</a></li>
+				<li><a href="{{ABOUT_PAGE_URL}}">About {{YOUR_NAME}}</a></li>
+				<li><a href="#formfooter">Schedule an Appointment</a></li>
+				<li><a href="{{PATIENT_EXPERIENCE_URL}}">Global Patient Experience</a></li>
+				<li><a href="{{GALLERY_URL}}">Private Result Gallery</a></li>
+			</ul>
+		</div>		
+	</nav>
+
+	<header class="site-branding">
+		<a href="{{HOME_PAGE_URL}}" class="custom-logo-link" rel="home">
+			<img width="224" height="24" alt="{{YOUR_BUSINESS_NAME}}" src="{{LOGO_IMAGE_URL}}">
+		</a>	
+	</header>
+
+	<main id="primary" class="site-home">
+
+		<section class="first-screen">
+			<div class="container">
+				<div class="first__screen-wrapper">
+					<img alt="Hero Animation" loading="lazy" width="400" src="{{HERO_ANIMATION_URL}}" class="responsive-image">
+					<h2>{{HERO_SLOGAN_TEXT}}</h2>
+					<div class="first-screen__button-wrapper">
+						<a href="#formfooter">Schedule an appointment</a>
+						<a href="#price-modal">Price</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="page-list">
+			<div class="container">
+				<div class="pl-item pl-hover" onclick="window.location='{{ABOUT_PAGE_URL}}'" style="background-image: url('{{FEATURE_CARD_1_BG}}');">
+					<div class="item--in">
+						<h2>About {{YOUR_NAME}}</h2>
+						<p class="item-content">{{YOUR_BIOGRAPHY_SUBTITLE}}</p>
+						<a class="item-btn" href="{{ABOUT_PAGE_URL}}">Learn more</a>
+					</div>
+					<div class="item-soc">
+						<a href="{{YOUR_INSTAGRAM_LINK_1}}" target="_blank">Instagram 1</a>
+						<a href="{{YOUR_INSTAGRAM_LINK_2}}" target="_blank">Instagram 2</a>
+						<a href="{{YOUR_YOUTUBE_LINK}}" target="_blank">YouTube</a>
+						<a href="{{YOUR_TELEGRAM_LINK}}" target="_blank">Telegram</a>
+					</div>
+				</div>
+
+				<div class="pl-item" onclick="window.location='{{YOUR_TELEGRAM_LINK}}'" style="background-image: url('{{FEATURE_CARD_2_BG}}');">
+					<div class="item--in">
+						<h2>Telegram Channel</h2>
+						<p class="item-content">{{TELEGRAM_CHANNEL_DESCRIPTION}}</p>
+						<a class="item-btn" href="{{YOUR_TELEGRAM_LINK}}">Discover</a>
+					</div>
+				</div>
+
+				<div class="location">
+					<h2>Our Clinics</h2>
+					<div class="location__wrapp">
+						<div class="item--in">
+							<a href="{{LOCATION_1_MAPS_LINK}}" target="_blank">
+								<p class="item-content">
+									<b style="font-weight: 600;">{{LOCATION_1_NAME}}</b><br>
+									{{LOCATION_1_ADDRESS_LINE_1}}<br>
+									{{LOCATION_1_ADDRESS_LINE_2}}
+								</p>
+							</a>
+							<a class="item-btn" href="{{LOCATION_1_MAPS_LINK}}" target="_blank">Directions</a>										
+						</div>
+						<div class="item--in">
+							<a href="{{LOCATION_2_MAPS_LINK}}" target="_blank">
+								<p class="item-content">
+									<b style="font-weight: 600;">{{LOCATION_2_NAME}}</b><br>
+									{{LOCATION_2_ADDRESS_LINE_1}}<br>
+									{{LOCATION_2_ADDRESS_LINE_2}}
+								</p>
+							</a>
+							<a class="item-btn" href="{{LOCATION_2_MAPS_LINK}}" target="_blank">Directions</a>										
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="services">
+			<div class="container">
+				<h2>List of Services / Surgeries</h2>
+				<div class="services__wrap">
+					<div class="services__wrap-item">
+						<h3>{{CATEGORY_1_TITLE}}</h3>
+						<div class="serv__wrap">
+							<div class="serv__line">{{CATEGORY_1_ITEM_1}}</div>
+							<div class="serv__line">{{CATEGORY_1_ITEM_2}}</div>
+							<div class="serv__line">{{CATEGORY_1_ITEM_3}}</div>
+						</div>
+						<img alt="{{CATEGORY_1_TITLE}}" src="{{CATEGORY_1_IMAGE_URL}}">
+					</div>
+					<div class="services__wrap-item">
+						<h3>{{CATEGORY_2_TITLE}}</h3>
+						<div class="serv__wrap">
+							<div class="serv__line">{{CATEGORY_2_ITEM_1}}</div>
+							<div class="serv__line">{{CATEGORY_2_ITEM_2}}</div>
+							<div class="serv__line">{{CATEGORY_2_ITEM_3}}</div>
+						</div>
+						<img alt="{{CATEGORY_2_TITLE}}" src="{{CATEGORY_2_IMAGE_URL}}">
+					</div>
+					<div class="services__wrap-item">
+						<h3>{{CATEGORY_3_TITLE}}</h3>
+						<div class="serv__wrap">
+							<div class="serv__line">{{CATEGORY_3_ITEM_1}}</div>
+							<div class="serv__line">{{CATEGORY_3_ITEM_2}}</div>
+							<div class="serv__line">{{CATEGORY_3_ITEM_3}}</div>
+						</div>
+						<img alt="{{CATEGORY_3_TITLE}}" src="{{CATEGORY_3_IMAGE_URL}}">
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<section class="footer-form" id="formfooter">
+		<div class="container">
+			<h2>Contact Us</h2>
+			<p><a href="{{YOUR_TELEGRAM_LINK}}">Telegram</a> | <a href="https://wa.me/{{YOUR_WHATSAPP_NUMBER}}">WhatsApp</a></p>
+			<h3>OR</h3>
+			<h4>Complete the form and our assistant will contact you</h4>
+
+			<form id="appointment-form" action="{{YOUR_FORM_SUBMIT_URL}}" method="POST">
+				<div class="form-element">
+					<label>I want to schedule:</label>
+					<label><input type="radio" name="appointment_type" value="Consultation" required> Consultation</label>
+					<label><input type="radio" name="appointment_type" value="Procedure" required> Procedure / Surgery</label>
+				</div>
+
+				<div class="form-element">
+					<label for="full_name">Your Name</label>
+					<input type="text" id="full_name" name="full_name" required placeholder="{{NAME_PLACEHOLDER}}">
+				</div>
+
+				<div class="form-element">
+					<label for="phone">Phone Number</label>
+					<input type="text" id="phone" name="phone" data-field-id="field9" required placeholder="{{PHONE_PLACEHOLDER}}">
+				</div>
+
+				<div class="form-element">
+					<label for="country">Country</label>
+					<select id="country" name="country">
+						<option value="">Select a country...</option>
+						<option value="US">United States</option>
+						<option value="UK">United Kingdom</option>
+						<option value="UA">Ukraine</option>
+						<option value="IT">Italy</option>
+						</select>
+				</div>
+
+				<div class="form-element">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required placeholder="{{EMAIL_PLACEHOLDER}}">
+				</div>
+
+				<div class="form-element">
+					<label for="comment">Comment</label>
+					<input type="text" id="comment" name="comment" placeholder="{{COMMENT_PLACEHOLDER}}">
+				</div>
+
+				<button type="submit" class="submit-button">Send</button>
+			</form>
+		</div>
+	</section>
+
+	<footer id="colophon" class="site-footer">
+		<div class="container">
+			<div class="footer__top-line">
+				<div class="footer__top-item">
+					<p class="cop"><a href="mailto:{{YOUR_CONTACT_EMAIL}}">{{YOUR_CONTACT_EMAIL}}</a></p>
+				</div>
+				<div class="footer__top-item">
+					<ul class="soc">
+						<li><a href="{{YOUR_INSTAGRAM_LINK_1}}" target="_blank">Instagram</a></li>
+						<li><a href="{{YOUR_YOUTUBE_LINK}}" target="_blank">YouTube</a></li>
+						<li><a href="{{YOUR_TELEGRAM_LINK}}" target="_blank">Telegram</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="dflex">
+				<p class="cop">© {{CURRENT_YEAR}} {{YOUR_BUSINESS_NAME}} - All rights reserved.</p>
+				<p class="link__f">Website by <a href="{{YOUR_PORTFOLIO_URL}}" target="_blank">{{YOUR_AGENCY_NAME}}</a></p>		
+			</div>
+		</div>
+	</footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+<script>
+	// Initialize International Phone Input
+	const input = document.querySelector('input[data-field-id="field9"]');
+	if(input) {
+		const iti = window.intlTelInput(input, {
+			utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+		});
+		input.addEventListener("countrychange", function() {
+			var countryData = iti.getSelectedCountryData();
+			if(countryData.dialCode) {
+				this.value = '+' + countryData.dialCode;
+			}
+		});
+	}
+</script>
+</body>
+</html>
