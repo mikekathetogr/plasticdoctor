@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home - {{YOUR_CLINIC_NAME}}</title>
+	<title>Dr. Theo MD, PhD - Academic Plastic Surgeon</title>
 
 	<!-- External Stylesheets -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -12,16 +12,16 @@
 
 	<style>
 		/* Core Base Styles */
-		body { background-color: #09090a; color: #ffffff; font-family: sans-serif; margin: 0; padding: 0; }
+		body { background-color: #09090a; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
 		a { color: #ffffff; text-decoration: none; }
 		.container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 		
 		/* First Screen Section */
 		.first-screen { padding: 100px 0; text-align: center; }
-		.first__screen-wrapper h2 { font-size: 3rem; margin-bottom: 20px; }
-		.first-screen__button-wrapper a { display: inline-block; padding: 12px 30px; background: #ffffff; color: #000; border-radius: 25px; margin: 5px; font-weight: bold; }
+		.first__screen-wrapper h2 { font-size: 3rem; margin-bottom: 20px; font-weight: 300; letter-spacing: 1px; }
+		.first-screen__button-wrapper a { display: inline-block; padding: 12px 30px; background: #ffffff; color: #000; border-radius: 25px; margin: 5px; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
 
-		/* Location Component Styling */
+		/* Location & Feature Component Styling */
 		.location {
 			margin-top: 16px; 
 			padding: 30px;
@@ -35,8 +35,8 @@
 		}
 		.location h2 { margin-top: 0; margin-bottom: 1.25rem; font-size: 2.25em; font-weight: 600; color: #fff; }
 		.location .item--in { width: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; }
-		.location .item-content { margin-bottom: 24px; }
-		.location .item-btn { display: flex; gap: 14px; align-items: center; }
+		.location .item-content { margin-bottom: 24px; color: #ccc; line-height: 1.6; }
+		.location .item-btn { display: flex; gap: 14px; align-items: center; border: 1px solid #444; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; }
 
 		@media (max-width: 767px) {
 			.location__wrapp { grid-template-columns: 1fr; gap: 20px; }
@@ -45,21 +45,24 @@
 
 		/* Services Section */
 		.services { padding: 60px 0; }
+		.services h2 { font-size: 2.25em; font-weight: 600; margin-bottom: 30px; }
 		.services__wrap { display: flex; gap: 20px; flex-wrap: wrap; }
-		.services__wrap-item { flex: 1; min-width: 280px; background: #1f1f1f; padding: 20px; border-radius: 12px; }
-		.serv__line { padding: 8px 0; border-bottom: 1px solid #333; }
+		.services__wrap-item { flex: 1; min-width: 280px; background: #1f1f1f; padding: 25px; border-radius: 12px; border: 1px solid #2a2a2a; }
+		.services__wrap-item h3 { font-size: 1.5rem; margin-top: 0; margin-bottom: 15px; border-bottom: 2px solid #333; padding-bottom: 10px; }
+		.serv__line { padding: 10px 0; border-bottom: 1px solid #282828; color: #ddd; font-size: 0.95rem; }
 
 		/* Form Styling */
-		.footer-form { background: #141414; padding: 60px 0; }
+		.footer-form { background: #141414; padding: 60px 0; border-top: 1px solid #222; }
 		.form-element { margin-bottom: 20px; }
-		.form-element label { display: block; margin-bottom: 8px; }
-		.form-element input[type="text"], .form-element input[type="email"], .form-element select { width: 100%; padding: 12px; background: #fafafa; color: #000; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-		.submit-button { background: #4488ee; color: #fff; border: none; padding: 12px 30px; border-radius: 4px; cursor: pointer; }
+		.form-element label { display: block; margin-bottom: 8px; color: #aaa; font-size: 0.9rem; }
+		.form-element input[type="text"], .form-element input[type="email"], .form-element select { width: 100%; padding: 14px; background: #222; color: #fff; border: 1px solid #333; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
+		.form-element input:focus, .form-element select:focus { outline: none; border-color: #555; }
+		.submit-button { background: #ffffff; color: #000; border: none; padding: 14px 30px; border-radius: 25px; cursor: pointer; font-weight: bold; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
 
 		/* Footer */
-		.site-footer { padding: 40px 0; border-top: 1px solid #222; }
+		.site-footer { padding: 40px 0; border-top: 1px solid #222; font-size: 0.9rem; color: #888; }
 		.footer__top-line { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-		.soc { list-style: none; padding: 0; display: flex; gap: 15px; }
+		.soc { list-style: none; padding: 0; display: flex; gap: 20px; }
 		.dflex { display: flex; justify-content: space-between; }
 	</style>
 </head>
@@ -72,18 +75,19 @@
 		<div class="menu-top-menu-container">
 			<ul id="primary-menu" class="menu">
 				<li><a href="#">Home</a></li>
-				<li><a href="#formfooter">Price / Consultation</a></li>
-				<li><a href="#about">About Dr. {{YOUR_LAST_NAME}}</a></li>
-				<li><a href="#formfooter">Schedule an Appointment</a></li>
-				<li><a href="#gallery">Result Gallery</a></li>
+				<li><a href="#about">About Dr. Theo</a></li>
+				<li><a href="#services">Specializations</a></li>
+				<li><a href="#formfooter">Schedule Consultation</a></li>
+				<li><a href="https://t.me/{{YOUR_TELEGRAM_HANDLE}}" target="_blank">Telegram Channel</a></li>
 			</ul>
 		</div>		
 	</nav>
 
 	<!-- Header / Branding -->
-	<header class="site-branding" style="padding: 20px; text-align: center;">
+	<header class="site-branding" style="padding: 30px 0; text-align: center;">
 		<a href="#" class="custom-logo-link" rel="home">
-			<h1 style="margin:0; font-size: 24px; letter-spacing: 2px;">{{YOUR_CLINIC_NAME}}</h1>
+			<h1 style="margin:0; font-size: 26px; letter-spacing: 3px; font-weight: 300;">DR. THEO MD, PhD</h1>
+			<span style="font-size: 0.8rem; letter-spacing: 2px; color: #888; text-transform: uppercase;">Academic Plastic Surgeon</span>
 		</a>	
 	</header>
 
@@ -93,37 +97,37 @@
 		<section class="first-screen">
 			<div class="container">
 				<div class="first__screen-wrapper">
-					<h2>Reveal your natural beauty with expert precision</h2>
+					<h2>Aesthetic Precision & Medical Academic Excellence</h2>
+					<p style="color: #aaa; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;">Dedicated to natural structural restoration, specialized facial rejuvenation, and evidence-based surgical outcomes.</p>
 					<div class="first-screen__button-wrapper">
-						<a href="#formfooter">Schedule an appointment</a>
-						<a href="#formfooter">Request Pricing</a>
+						<a href="#formfooter">Schedule Appointment</a>
+						<a href="#formfooter">Private Consultation</a>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Feature Block: About / Telegram -->
-		<section class="page-list">
+		<!-- Feature Block: About Dr. Theo -->
+		<section class="page-list" id="about">
 			<div class="container">
-				<div class="location" id="about">
-					<h2>Dr. {{YOUR_FULL_NAME}}</h2>
+				<div class="location">
+					<h2>Dr. Theo (P.T. Arkoumanis MD, PhD)</h2>
 					<p class="item-content">
-						<b>Academic Plastic Surgeon</b><br>
-						Specialized in high-precision facial aesthetics, blepharoplasty, revision work, and natural transformations backed by rigorous clinical research and academic excellence.
+						Academic Plastic Surgeon specializing in high-precision facial procedures, blepharoplasty, lipotransfer, and structural facial aesthetic operations. Grounded in research-backed methodology to deliver natural, safe, and long-lasting outcomes without unnecessary surgical risk.
 					</p>
 				</div>
 
 				<!-- Locations Block -->
 				<div class="location">
-					<h2>Our Clinic Locations</h2>
+					<h2>Clinics & Practice Locations</h2>
 					<div class="location__wrapp">
 						<!-- Location 1 -->
 						<div class="item--in">
 							<div>
 								<p class="item-content">
-									<b style="font-weight: 600;">{{CITY_1_NAME}} - Primary Suite</b><br>
-									{{CITY_1_ADDRESS_LINE_1}}<br>
-									{{CITY_1_ADDRESS_LINE_2}}
+									<b style="font-weight: 600; color: #fff;">Athens Practice</b><br>
+									Vasilissis Sofias Ave & Kifisias Ave<br>
+									Athens, Greece
 								</p>
 							</div>
 							<a class="item-btn" href="https://maps.google.com" target="_blank">Get Directions</a>										
@@ -132,9 +136,9 @@
 						<div class="item--in">
 							<div>
 								<p class="item-content">
-									<b style="font-weight: 600;">{{CITY_2_NAME}} - Surgical Center</b><br>
-									{{CITY_2_ADDRESS_LINE_1}}<br>
-									{{CITY_2_ADDRESS_LINE_2}}
+									<b style="font-weight: 600; color: #fff;">Surgical Affiliate Center</b><br>
+									Private Clinic Operating Suite<br>
+									Athens, Greece
 								</p>
 							</div>
 							<a class="item-btn" href="https://maps.google.com" target="_blank">Get Directions</a>										
@@ -145,35 +149,35 @@
 		</section>
 
 		<!-- Services / Procedures Section -->
-		<section class="services">
+		<section class="services" id="services">
 			<div class="container">
-				<h2>List of Procedures</h2>
+				<h2>Surgical & Aesthetic Focus</h2>
 				<div class="services__wrap">
 					<!-- Service Category 1 -->
 					<div class="services__wrap-item">
-						<h3>Face & Eyes</h3>
+						<h3>Facial & Eye Surgery</h3>
 						<div class="serv__wrap">
-							<div class="serv__line">Blepharoplasty (Eyelid Surgery)</div>
-							<div class="serv__line">Deep Plane Facelift</div>
-							<div class="serv__line">Neck Lift & Browlift</div>
+							<div class="serv__line">Blepharoplasty (Upper & Lower Eyelid)</div>
+							<div class="serv__line">Facial Lipofilling / Fat Grafting</div>
+							<div class="serv__line">Cheiloplasty & Brow Lifting</div>
 						</div>
 					</div>
 					<!-- Service Category 2 -->
 					<div class="services__wrap-item">
-						<h3>Nose Surgery</h3>
+						<h3>Facial Rejuvenation</h3>
 						<div class="serv__wrap">
-							<div class="serv__line">Aesthetic Rhinoplasty</div>
-							<div class="serv__line">Functional & Aesthetic Rhinoplasty</div>
-							<div class="serv__line">Complex Revision Rhinoplasty</div>
+							<div class="serv__line">Deep Plane & Classic Facelift</div>
+							<div class="serv__line">Endoscopic Brow & Neck Lifting</div>
+							<div class="serv__line">Comprehensive Facial Skeletal Analysis</div>
 						</div>
 					</div>
 					<!-- Service Category 3 -->
 					<div class="services__wrap-item">
-						<h3>Injectables & Care</h3>
+						<h3>Injectable Maintenance</h3>
 						<div class="serv__wrap">
-							<div class="serv__line">Facial Skeletal Assessment</div>
-							<div class="serv__line">Customized Yearly Maintenance Packages</div>
-							<div class="serv__line">Advanced Rejuvenation Protocols</div>
+							<div class="serv__line">Full-Year Injectable Rejuvenation Plan</div>
+							<div class="serv__line">Targeted Hyaluronic Acid & Botox Protocols</div>
+							<div class="serv__line">Custom Structural Symmetry Assessment</div>
 						</div>
 					</div>
 				</div>
@@ -185,53 +189,52 @@
 	<!-- Appointment Booking Form Section -->
 	<section class="footer-form" id="formfooter">
 		<div class="container" style="max-width: 600px;">
-			<h2 style="text-align: left;">Contact via Messengers</h2>
-			<p style="margin-bottom: 20px;">
-				<a href="https://t.me/{{YOUR_TELEGRAM_HANDLE}}" target="_blank"><b>Telegram</b></a> | 
-				<a href="https://wa.me/{{YOUR_WHATSAPP_NUMBER}}" target="_blank"><b>WhatsApp</b></a>
+			<h2 style="text-align: left; margin-bottom: 10px;">Direct Contact</h2>
+			<p style="margin-bottom: 20px; color: #ccc;">
+				Reach out directly via messengers: 
+				<a href="https://t.me/{{YOUR_TELEGRAM_HANDLE}}" target="_blank" style="text-decoration: underline; margin-left: 10px;"><b>Telegram Channel</b></a>
 			</p>
-			<h4 style="color: #aaa; margin: 10px 0;">OR</h4>
-			<h3 style="margin-bottom: 30px;">Complete the form and our medical assistant will contact you</h3>
+			<h4 style="color: #666; margin: 20px 0; font-size: 0.8rem; letter-spacing: 1px;">OR COMPLETE THE FORM BELOW</h4>
+			<h3 style="margin-bottom: 30px; font-weight: 300;">Our medical assistant will confirm your appointment details.</h3>
 
 			<form id="appointment-form" action="#" method="POST">
 				<div class="form-element">
-					<label>I want to schedule:</label>
-					<label style="display:inline-block; margin-right: 20px;"><input type="radio" name="appointment_type" value="Consultation" required> Consultation</label>
-					<label style="display:inline-block;"><input type="radio" name="appointment_type" value="Surgery" required> Procedure / Surgery</label>
+					<label>Schedule Type:</label>
+					<label style="display:inline-block; margin-right: 20px; color: #fff;"><input type="radio" name="appointment_type" value="Consultation" required> Consultation</label>
+					<label style="display:inline-block; color: #fff;"><input type="radio" name="appointment_type" value="Surgery" required> Surgical Procedure</label>
 				</div>
 
 				<div class="form-element">
 					<label for="full_name">Your Name</label>
-					<input type="text" id="full_name" name="full_name" required placeholder="Enter your full name">
+					<input type="text" id="full_name" name="full_name" required placeholder="Enter full name">
 				</div>
 
 				<div class="form-element">
 					<label for="phone">Phone Number</label>
-					<input type="text" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+					<input type="text" id="phone" name="phone" required placeholder="+30 690 000 0000">
 				</div>
 
 				<div class="form-element">
 					<label for="country">Country</label>
 					<select id="country" name="country">
-						<option value="">Select your country...</option>
+						<option value="GR" selected>Greece</option>
+						<option value="UK">United Kingdom</option>
 						<option value="US">United States</option>
-						<option value="GB">United Kingdom</option>
 						<option value="IT">Italy</option>
-						<option value="GR">Greece</option>
 					</select>
 				</div>
 
 				<div class="form-element">
-					<label for="email">Email</label>
-					<input type="email" id="email" name="email" required placeholder="your.email@example.com">
+					<label for="email">Email Address</label>
+					<input type="email" id="email" name="email" required placeholder="your.email@domain.com">
 				</div>
 
 				<div class="form-element">
-					<label for="comment">Comment / Details</label>
-					<input type="text" id="comment" name="comment" placeholder="Tell us about your goals...">
+					<label for="comment">Notes / Procedure Preference</label>
+					<input type="text" id="comment" name="comment" placeholder="Blepharoplasty, facial rejuvenation, etc.">
 				</div>
 
-				<button type="submit" class="submit-button" style="width: 100%; margin-top: 10px;">Send Request</button>
+				<button type="submit" class="submit-button" style="width: 100%; margin-top: 15px;">Send Request</button>
 			</form>
 		</div>
 	</section>
@@ -241,18 +244,17 @@
 		<div class="container">
 			<div class="footer__top-line">
 				<div class="footer__top-item">
-					<p class="cop"><a href="mailto:{{YOUR_EMAIL}}">{{YOUR_EMAIL}}</a></p>
+					<p class="cop"><a href="mailto:contact@drtheo.com">contact@drtheo.com</a></p>
 				</div>
 				<div class="footer__top-item">
 					<ul class="soc">
-						<li><a href="https://instagram.com/{{YOUR_INSTAGRAM}}" target="_blank">Instagram</a></li>
-						<li><a href="https://t.me/{{YOUR_TELEGRAM_HANDLE}}" target="_blank">Telegram</a></li>
+						<li><a href="https://t.me/{{YOUR_TELEGRAM_HANDLE}}" target="_blank">Telegram Channel</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="dflex">
-				<p class="cop">© 2026 {{YOUR_CLINIC_NAME}} - All rights reserved.</p>
-				<p class="link__f">Designed for Medical Excellence</p>		
+				<p class="cop">© 2026 Dr. Theo MD, PhD - All rights reserved.</p>
+				<p class="link__f">Academic Aesthetic & Reconstructive Surgery</p>		
 			</div>
 		</div>
 	</footer>
